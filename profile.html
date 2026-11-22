@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="View and manage your SkillSwap profile and connected skills.">
+    <title>My Profile - SkillSwap</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="profile-page-body">
+    <header class="site-navbar profile-navbar">
+        <div class="nav-left-group">
+            <a class="brand-logo profile-brand" href="index.html">
+                <span class="brand-mark"><i class="fa-solid fa-shuffle" aria-hidden="true"></i></span>
+                <span class="brand-wordmark"><span class="wordmark-skill">skill</span><span class="wordmark-swap">swap</span></span>
+            </a>
+            <button class="mobile-menu-toggle" type="button" aria-expanded="false" aria-controls="primaryNavigation" aria-label="Open navigation"><i class="fa-solid fa-bars" aria-hidden="true"></i></button>
+            <nav class="primary-navigation" id="primaryNavigation" aria-label="Main navigation">
+                <ul class="nav-menu-links">
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <script src="script.js"></script>
+
+    <main class="profile-page-container">
+        <header class="profile-page-heading">
+            <div>
+                <p class="profile-eyebrow">YOUR SKILLSWAP SPACE</p>
+                <h1>My Profile</h1>
+                <p>Share what you know and what you’re excited to learn.</p>
+            </div>
+            <button class="profile-action-link" type="button" data-open-profile-editor>
+                <i class="fa-solid fa-pen-to-square" aria-hidden="true"></i>
+                Edit profile
+            </button>
+        </header>
+
+        <p class="profile-save-status" id="profileSaveStatus" role="status" aria-live="polite"></p>
+
+        <section class="profile-overview-grid" aria-label="Profile overview">
+            <article class="profile-card profile-identity-card">
+                <div class="profile-identity">
+                    <div class="profile-avatar" id="profileAvatar" role="img" aria-label="Profile picture"></div>
+                    <div class="profile-identity-copy">
+                        <span class="profile-status"><span aria-hidden="true"></span> Available to connect</span>
+                        <h2 id="profileDisplayName"></h2>
+                        <p id="profileRole"></p>
+                    </div>
+                </div>
+                <div class="profile-facts">
+                    <span><i class="fa-solid fa-location-dot" aria-hidden="true"></i> <span id="profileLocation"></span></span>
+                    <span><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i> <span id="profileExperience"></span></span>
+                </div>
+                <button class="profile-primary-link" type="button" data-open-profile-editor>
+                    Edit your profile and skills <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                </button>
+            </article>
+
+            <article class="profile-card profile-bio-card">
+                <div class="profile-section-heading">
+                    <div>
+                        <p class="profile-eyebrow">A LITTLE ABOUT ME</p>
+                        <h2>Bio</h2>
+                    </div>
+                    <i class="fa-regular fa-user profile-heading-icon" aria-hidden="true"></i>
+                </div>
+                <p class="profile-bio-copy" id="profileBio"></p>
+            </article>
+        </section>
+
+        <section class="profile-card profile-skills-card" aria-labelledby="profile-skills-title">
+            <div class="profile-section-heading profile-skills-heading">
+                <div>
+                    <p class="profile-eyebrow">YOUR EXCHANGE PROFILE</p>
+                    <h2 id="profile-skills-title">Connected skills</h2>
+                    <p class="profile-section-description">Keep your teaching skills and learning goals up to date.</p>
+                </div>
+                <button class="profile-action-link" type="button" data-open-profile-editor>
+                    <i class="fa-solid fa-pen-to-square" aria-hidden="true"></i>
+                    Edit skills
+                </button>
+            </div>
+
+            <div class="profile-skill-groups">
+                <section class="profile-skill-group" aria-labelledby="profile-teach-title">
+                    <div class="profile-skill-group-heading">
+                        <span class="profile-skill-icon profile-teach-icon"><i class="fa-solid fa-chalkboard-user" aria-hidden="true"></i></span>
+                        <div>
+                            <h3 id="profile-teach-title">Skills I can teach</h3>
+                            <p>Help another learner grow</p>
+                        </div>
+                    </div>
+                    <ul class="profile-skill-list" id="profileTeachSkills"></ul>
+                </section>
+
+                <section class="profile-skill-group" aria-labelledby="profile-learn-title">
+                    <div class="profile-skill-group-heading">
+                        <span class="profile-skill-icon profile-learn-icon"><i class="fa-solid fa-lightbulb" aria-hidden="true"></i></span>
+                        <div>
+                            <h3 id="profile-learn-title">Skills I want to learn</h3>
+                            <p>Find a peer to learn with</p>
+                        </div>
+                    </div>
+                    <ul class="profile-skill-list profile-learning-list" id="profileLearnSkills"></ul>
+                </section>
+            </div>
+        </section>
+
+        <section class="profile-connection-note" aria-label="Find a skill exchange partner">
+            <div>
+                <h2>Ready to make a connection?</h2>
+                <p>Explore members whose skills complement what you want to learn.</p>
+            </div>
+            <a href="explore.html" class="profile-explore-link">
+                Explore skills <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </a>
+        </section>
+    </main>
+
+    <div class="profile-edit-overlay" id="profileEditOverlay" hidden>
+        <section class="profile-edit-dialog" role="dialog" aria-modal="true" aria-labelledby="profileEditTitle">
+            <div class="profile-edit-dialog-heading">
+                <div>
+                    <p class="profile-eyebrow">YOUR DETAILS</p>
+                    <h2 id="profileEditTitle">Edit profile</h2>
+                </div>
+                <button class="profile-dialog-close" type="button" id="closeProfileEditor" aria-label="Close profile editor">
+                    <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+                </button>
+            </div>
+            <form id="profileEditForm">
+                <div class="profile-edit-fields">
+                    <label class="profile-form-field">
+                        <span>Full name <span aria-hidden="true">*</span></span>
+                        <input id="editProfileName" name="name" type="text" maxlength="80" autocomplete="name" required>
+                    </label>
+                    <label class="profile-form-field">
+                        <span>Role or study area <span aria-hidden="true">*</span></span>
+                        <input id="editProfileRole" name="role" type="text" maxlength="100" required>
+                    </label>
+                    <label class="profile-form-field">
+                        <span>Location</span>
+                        <input id="editProfileLocation" name="location" type="text" maxlength="100" autocomplete="address-level2">
+                    </label>
+                    <label class="profile-form-field">
+                        <span>Experience level <span aria-hidden="true">*</span></span>
+                        <select id="editExperienceLevel" name="experienceLevel" required>
+                            <option value="">Choose your level</option>
+                            <option value="Beginner">Beginner</option>
+                            <option value="Intermediate">Intermediate</option>
+                            <option value="Advanced">Advanced</option>
+                        </select>
+                    </label>
+                    <label class="profile-form-field">
+                        <span>Profile picture</span>
+                        <input id="editProfilePicture" name="profilePicture" type="file" accept="image/png,image/jpeg,image/webp">
+                        <span class="profile-form-help">Optional. PNG, JPEG, or WebP up to 2 MB.</span>
+                        <button class="profile-cancel-button" type="button" id="removeProfilePicture" hidden>Remove picture</button>
+                    </label>
+                    <label class="profile-form-field profile-form-field-wide">
+                        <span>Bio / About Me <span aria-hidden="true">*</span></span>
+                        <textarea id="editProfileBio" name="bio" rows="4" maxlength="500" required></textarea>
+                    </label>
+                    <label class="profile-form-field profile-form-field-wide">
+                        <span>Skills I can teach <span aria-hidden="true">*</span></span>
+                        <textarea id="editTeachSkills" name="teachSkills" rows="2" maxlength="1000" aria-describedby="skillListHelp" required></textarea>
+                    </label>
+                    <label class="profile-form-field profile-form-field-wide">
+                        <span>Skills I want to learn <span aria-hidden="true">*</span></span>
+                        <textarea id="editLearnSkills" name="learnSkills" rows="2" maxlength="1000" aria-describedby="skillListHelp" required></textarea>
+                    </label>
+                    <p class="profile-form-help" id="skillListHelp">Separate skills with commas and include at least one in each list.</p>
+                </div>
+                <p class="profile-form-error" id="profileFormError" role="alert"></p>
+                <div class="profile-edit-actions">
+                    <button class="profile-cancel-button" type="button" id="cancelProfileEditor">Cancel</button>
+                    <button class="profile-save-button" type="submit">Save changes</button>
+                </div>
+            </form>
+        </section>
+    </div>
+    <footer class="site-footer">
+        <div class="footer-main"><div><a class="brand-logo app-brand-link footer-brand" href="index.html"><span class="brand-mark"><i class="fa-solid fa-shuffle" aria-hidden="true"></i></span><span class="brand-wordmark"><span class="wordmark-skill">skill</span><span class="wordmark-swap">swap</span></span></a><p>Good things grow when we learn from each other.</p></div><nav aria-label="Footer navigation"><a href="explore.html">Explore skills</a><a href="about.html">About us</a><a href="contact.html">Contact</a><a href="reviews.html">Reviews</a></nav></div>
+        <div class="footer-bottom"><span>© 2026 SkillSwap. Built for curious minds.</span><a href="dashboard.html">Go to dashboard <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Share and browse SkillSwap peer learning reviews.">
+    <title>Reviews - SkillSwap</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="app-page-body reviews-page-body">
+    <header class="site-navbar app-page-navbar">
+        <div class="nav-left-group">
+            <a class="brand-logo app-brand-link" href="index.html">
+                <span class="brand-mark"><i class="fa-solid fa-shuffle" aria-hidden="true"></i></span>
+                <span class="brand-wordmark"><span class="wordmark-skill">skill</span><span class="wordmark-swap">swap</span></span>
+            </a>
+            <button class="mobile-menu-toggle" type="button" aria-expanded="false" aria-controls="primaryNavigation" aria-label="Open navigation"><i class="fa-solid fa-bars" aria-hidden="true"></i></button>
+            <nav class="primary-navigation" id="primaryNavigation" aria-label="Main navigation">
+                <ul class="nav-menu-links">
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <script src="script.js"></script>
+
+    <main class="reviews-page-container">
+        <header class="app-page-heading">
+            <div>
+                <p class="app-page-eyebrow">LEARN TOGETHER</p>
+                <h1>Reviews &amp; feedback</h1>
+                <p>Share what worked well and help the SkillSwap community learn with confidence.</p>
+            </div>
+            <aside class="review-rating-summary" aria-label="Review summary">
+                <span class="review-summary-stars" id="reviewSummaryStars" aria-hidden="true">☆☆☆☆☆</span>
+                <strong id="reviewsAverage">—</strong>
+                <span><span id="reviewsCount">0</span> <span id="reviewCountLabel">community reviews</span></span>
+            </aside>
+        </header>
+
+        <div class="reviews-layout">
+            <section class="app-surface review-form-card" aria-labelledby="leaveReviewTitle">
+                <div class="app-section-heading">
+                    <span class="app-section-icon" aria-hidden="true"><i class="fa-regular fa-pen-to-square"></i></span>
+                    <div>
+                        <h2 id="leaveReviewTitle">Leave a review</h2>
+                        <p>Your feedback helps other learners choose a great partner.</p>
+                    </div>
+                </div>
+                <form id="reviewForm" class="review-form">
+                    <label class="app-form-field" for="reviewerName">
+                        Your name
+                        <input id="reviewerName" name="name" type="text" maxlength="60" autocomplete="name" placeholder="e.g. Sara Ahmed" required>
+                    </label>
+                    <label class="app-form-field" for="reviewSkill">
+                        Skill exchange
+                        <input id="reviewSkill" name="skill" type="text" maxlength="80" placeholder="e.g. CSS Flexbox" required>
+                    </label>
+                    <label class="app-form-field" for="reviewRating">
+                        Your rating
+                        <select id="reviewRating" name="rating" required>
+                            <option value="">Choose a rating</option>
+                            <option value="5">5 - Excellent</option>
+                            <option value="4">4 - Very good</option>
+                            <option value="3">3 - Good</option>
+                            <option value="2">2 - Could be better</option>
+                            <option value="1">1 - Needs improvement</option>
+                        </select>
+                    </label>
+                    <label class="app-form-field" for="reviewComment">
+                        Your feedback
+                        <textarea id="reviewComment" name="comment" rows="4" maxlength="500" placeholder="Tell the community about your learning experience..." required></textarea>
+                    </label>
+                    <p class="app-form-status" id="reviewFormStatus" role="status" aria-live="polite"></p>
+                    <button class="app-primary-button" type="submit">
+                        Submit review <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                    </button>
+                </form>
+            </section>
+
+            <section class="app-surface reviews-list-card" aria-labelledby="recentReviewsTitle">
+                <div class="app-section-heading reviews-list-heading">
+                    <div>
+                        <p class="app-page-eyebrow">COMMUNITY VOICES</p>
+                        <h2 id="recentReviewsTitle">Recent feedback</h2>
+                    </div>
+                    <span class="review-list-count" id="reviewListCount">0 reviews</span>
+                </div>
+                <div class="reviews-list" id="reviewsList" aria-live="polite">
+                    <div class="reviews-empty-state" id="reviewsEmptyState">
+                        <span class="reviews-empty-icon" aria-hidden="true"><i class="fa-regular fa-comment-dots"></i></span>
+                        <h3>No reviews yet</h3>
+                        <p>Be the first to share feedback about a skill exchange.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    <footer class="site-footer">
+        <div class="footer-main"><div><a class="brand-logo app-brand-link footer-brand" href="index.html"><span class="brand-mark"><i class="fa-solid fa-shuffle" aria-hidden="true"></i></span><span class="brand-wordmark"><span class="wordmark-skill">skill</span><span class="wordmark-swap">swap</span></span></a><p>Good things grow when we learn from each other.</p></div><nav aria-label="Footer navigation"><a href="explore.html">Explore skills</a><a href="about.html">About us</a><a href="contact.html">Contact</a><a href="settings.html">Settings</a></nav></div>
+        <div class="footer-bottom"><span>© 2026 SkillSwap. Built for curious minds.</span><a href="dashboard.html">Go to dashboard <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></div>
+    </footer>
+</body>
+</html>

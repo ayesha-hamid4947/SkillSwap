@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sign in or create your SkillSwap account.">
+    <title>Log in | SkillSwap</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="marketing-page demo-auth-page">
+    <a class="skip-link" href="#mainContent">Skip to content</a>
+    <header class="site-navbar app-page-navbar">
+        <div class="nav-left-group">
+            <a class="brand-logo app-brand-link" href="index.html" aria-label="SkillSwap home"><span class="brand-mark"><i class="fa-solid fa-shuffle" aria-hidden="true"></i></span><span class="brand-wordmark"><span class="wordmark-skill">skill</span><span class="wordmark-swap">swap</span></span></a>
+            <button class="mobile-menu-toggle" type="button" aria-expanded="false" aria-controls="primaryNavigation" aria-label="Open navigation"><i class="fa-solid fa-bars" aria-hidden="true"></i></button>
+            <nav class="primary-navigation" id="primaryNavigation" aria-label="Main navigation"><ul class="nav-menu-links"></ul></nav>
+        </div>
+    </header>
+    <script src="script.js"></script>
+    <main id="mainContent" class="demo-auth-main">
+        <section class="demo-auth-copy">
+            <span class="section-kicker">WELCOME BACK</span>
+            <h1>Good to see<br><em>you again.</em></h1>
+            <p>Pick up where curiosity left off. Your learning partners and next skill swap are waiting.</p>
+            <div class="demo-auth-points"><span><i class="fa-solid fa-check" aria-hidden="true"></i> Keep your learning goals close</span><span><i class="fa-solid fa-check" aria-hidden="true"></i> Find people to learn and grow with</span><span><i class="fa-solid fa-check" aria-hidden="true"></i> Bring something you know to share</span></div>
+        </section>
+        <section class="demo-auth-card" aria-labelledby="loginTitle">
+            <h2 id="loginTitle">Login</h2>
+            <p id="authDescription">Sign in to continue learning and sharing skills.</p>
+            <form class="demo-auth-form" id="demoLoginForm" novalidate>
+                <label class="demo-auth-field" for="loginEmail">Email address<input id="loginEmail" name="email" type="email" autocomplete="email" maxlength="254" placeholder="you@example.com" required></label>
+                <label class="demo-auth-field" for="loginPassword">Password<span class="demo-password-wrap"><input id="loginPassword" name="password" type="password" autocomplete="current-password" minlength="8" maxlength="128" placeholder="At least 8 characters" required><button class="password-visibility-toggle" type="button" data-toggle-password="loginPassword" aria-label="Show password">Show</button></span></label>
+                <p class="demo-auth-status" id="loginStatus" role="status" aria-live="polite"></p>
+                <button class="demo-auth-submit" type="submit">Login <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
+            </form>
+            <p class="demo-auth-switch" id="loginSwitch">Don't have an account? <button type="button" data-auth-mode="signup">Sign Up</button></p>
+            <form class="demo-auth-form" id="demoSignupForm" novalidate hidden>
+                <label class="demo-auth-field" for="signupName">Full name<input id="signupName" name="fullName" type="text" autocomplete="name" maxlength="80" placeholder="e.g. Sara Ahmed" required></label>
+                <label class="demo-auth-field" for="signupEmail">Email address<input id="signupEmail" name="email" type="email" autocomplete="email" maxlength="254" placeholder="you@example.com" required></label>
+                <label class="demo-auth-field" for="signupPassword">Password<span class="demo-password-wrap"><input id="signupPassword" name="password" type="password" autocomplete="new-password" minlength="8" maxlength="128" placeholder="At least 8 characters" required><button class="password-visibility-toggle" type="button" data-toggle-password="signupPassword" aria-label="Show password">Show</button></span></label>
+                <label class="demo-auth-field" for="signupConfirmPassword">Confirm password<span class="demo-password-wrap"><input id="signupConfirmPassword" name="confirmPassword" type="password" autocomplete="new-password" minlength="8" maxlength="128" placeholder="Enter your password again" required><button class="password-visibility-toggle" type="button" data-toggle-password="signupConfirmPassword" aria-label="Show password">Show</button></span></label>
+                <p class="demo-auth-status" id="signupStatus" role="status" aria-live="polite"></p>
+                <button class="demo-auth-submit" type="submit">Create account <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
+            </form>
+            <p class="demo-auth-switch" id="signupSwitch" hidden>Already have an account? <button type="button" data-auth-mode="login">Login</button></p>
+            <p class="demo-auth-disclaimer"><i class="fa-solid fa-circle-info" aria-hidden="true"></i> Demo authentication only. Passwords are PBKDF2-hashed in this browser; local storage is not production-secure. Do not reuse a real password.</p>
+        </section>
+    </main>
+    <footer class="site-footer"><div class="footer-main"><div><a class="brand-logo app-brand-link footer-brand" href="index.html"><span class="brand-mark"><i class="fa-solid fa-shuffle" aria-hidden="true"></i></span><span class="brand-wordmark"><span class="wordmark-skill">skill</span><span class="wordmark-swap">swap</span></span></a><p>Good things grow when we learn from each other.</p></div><nav aria-label="Footer navigation"><a href="explore.html">Explore skills</a><a href="about.html">About us</a><a href="contact.html">Contact</a></nav></div><div class="footer-bottom"><span>© 2026 SkillSwap. Frontend demonstration only.</span><a href="index.html">Back home <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></div></footer>
+</body>
+</html>
